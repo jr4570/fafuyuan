@@ -8,12 +8,6 @@
         style="width: 70%; height: 250px;">
 </iframe>
 
-## 《紅外制導導彈的運作原理（以美國AIM-9響尾蛇空空導彈為參考）》<Badge type="tip" text="2024/9/12" /> <Badge type="info" text="群員要求" />
-<img src="./27.jpg" alt="An image" width="200"/>
-
-## 群宣(假的) <Badge type="tip" text="2024/9/9" /> <Badge type="info" text="群員要求" />
-<img src="./26.jpg" alt="An image" width="200"/>
-
 ## 本院官方b站正式上線 <Badge type="tip" text="2024/8/18" />
 本院官方b站網址:https://b23.tv/8vaQi4D
 ## 欢迎来到发癫群附属综合医院 <Badge type="tip" text="2024/8/11" />

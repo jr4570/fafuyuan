@@ -9,7 +9,8 @@ export default defineConfig({
     nav: [
       { text: '主頁', link: '/' },
       { text: '關於本院', link: '/info' },
-      { text: '加入院群', link: '/join' }
+      { text: '加入院群', link: '/join' },
+      { text: '最新消息', link: '/news' }
     ],
 
     sidebar: [
@@ -25,6 +26,13 @@ export default defineConfig({
         text: '加入院群',
         items: [
           { text: '加入院群', link: '/join' }
+        ]
+      },
+      {
+        text: '最新消息',
+        items: [
+          { text: '最新消息', link: '/news' },
+          { text: '公告', link: '/announcement' },
         ]
       }
     ],

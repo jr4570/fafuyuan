@@ -51,6 +51,7 @@ const 各科主任 = [
   { avatar: '/14.jpg', name: 'CR400BF-GZ-5204', title: '神经科主任' },
   { avatar: '/15.jpg', name: '汝可知然', title: '骨科主任' },
   { avatar: '/16.jpg', name: 'Fairy (群猫猫) ', title: '脑科主任' },
+  { avatar: '/26.jpg', name: '梦之蓝 ', title: '眼科主任' },
 ]
 
 // 外院专家组

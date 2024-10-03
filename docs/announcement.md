@@ -1,4 +1,8 @@
 # 公告
+## 发癫群附属综合医院重要通知<Badge type="tip" text="2024/9/24" /> <Badge type="danger" text="公告" />
+本院不賣書，若想買書請去tics
+
+tics官網:
 ## 发癫群附属综合医院一号令<Badge type="tip" text="2024/9/24" /> <Badge type="warning" text="公告" />
 ### 《关于本院看诊时间更改》
 鉴于当前时局与未来发展趋势，9月1号开始，看诊时间更改为每周六、日。

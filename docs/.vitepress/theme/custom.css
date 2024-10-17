@@ -1,589 +1,408 @@
-:root {
-  /* WinUI 3 Light Theme Colors */
-  --win-color-background: #F3F3F3;
-  --win-color-background-secondary: #EEEEEE;
-  --win-color-text-primary: #000000;
-  --win-color-text-secondary: #5D5D5D;
-  --win-color-accent: #0078D4;
-  --win-color-accent-light: #60CDFF;
-  --win-color-border: #E1E1E1;
-  --win-color-error: #C42B1C;
-  --win-color-success: #0F7B0F;
-  --win-color-warning: #C19C00;
-  --win-color-background-rgb: 243, 243, 243;
-  --win-color-background-secondary-rgb: 238, 238, 238;
-  
-  /* Mapping VitePress variables */
-  --vp-c-bg: var(--win-color-background);
-  --vp-c-bg-soft: var(--win-color-background-secondary);
-  --vp-c-bg-mute: var(--win-color-border);
-  --vp-c-divider: var(--win-color-border);
-  --vp-c-text-1: var(--win-color-text-primary);
-  --vp-c-text-2: var(--win-color-text-secondary);
-  --vp-c-brand: var(--win-color-accent);
-  --vp-c-brand-light: var(--win-color-accent-light);
-
-  /* 动画变量 */
-  --win11-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Enhanced Animation Keyframes */
+@keyframes fadeInScale {
+  from { 
+    opacity: 0; 
+    transform: scale(0.98) translateY(20px);
+  }
+  to { 
+    opacity: 1; 
+    transform: scale(1) translateY(2);
+  }
 }
 
-html.dark {
-  /* WinUI 3 Dark Theme Colors */
-  --win-color-background: #202020;
-  --win-color-background-secondary: #2B2B2B;
-  --win-color-text-primary: #FFFFFF;
-  --win-color-text-secondary: #C7C7C7;
-  --win-color-accent: #60CDFF;
-  --win-color-accent-light: #0078D4;
-  --win-color-border: #323232;
-  --win-color-error: #F85149;
-  --win-color-success: #4CC44D;
-  --win-color-warning: #CCA700;
-  --win-color-background-rgb: 32, 32, 32;
-  --win-color-background-secondary-rgb: 43, 43, 43;
-  
-  /* Mapping VitePress variables */
-  --vp-c-bg: var(--win-color-background);
-  --vp-c-bg-soft: var(--win-color-background-secondary);
-  --vp-c-bg-mute: var(--win-color-border);
-  --vp-c-divider: var(--win-color-border);
-  --vp-c-text-1: var(--win-color-text-primary);
-  --vp-c-text-2: var(--win-color-text-secondary);
-  --vp-c-brand: var(--win-color-accent);
-  --vp-c-brand-light: var(--win-color-accent-light);
+@keyframes rotateIn {
+  from { 
+    opacity: 1; 
+    transform: perspective(1000px) rotateX(-5deg);
+  }
+  to { 
+    opacity: 1; 
+    transform: perspective(1000px) rotateX(0);
+  }
 }
 
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes floatingAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes mdTransition {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtlePopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Global Styles */
 body {
-  font-family: 'Segoe UI Variable', 'Segoe UI', sans-serif;
-  background-color: var(--win-color-background);
-  color: var(--win-color-text-primary);
-  transition: var(--win11-transition);
+  overflow-x: hidden;
+  animation: blurIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Segoe UI','HiraGinoGB', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  transition: background-color 0.3s ease;
 }
 
-/* 增强现有的动画效果 */
-@keyframes win11-fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes win11-slide-up {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes win11-scale {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes win11-rotate {
-  from { transform: rotate(-5deg); opacity: 0; }
-  to { transform: rotate(0); opacity: 1; }
-}
-
-/* 全局元素动画 */
-.VPDoc, .VPHome, .VPFeature, .VPTeamPage, .VPSponsors {
-  animation: win11-fade-in 0.6s var(--win11-transition);
-}
-
-/* 标题动画 */
-h1, h2, h3, h4, h5, h6 {
-  animation: win11-slide-up 0.6s var(--win11-transition);
-}
-
-h2 { animation-delay: 0.1s; }
-h3 { animation-delay: 0.2s; }
-
-/* 链接动画 */
-a {
-  transition: var(--win11-transition);
-}
-
-a:hover {
-  transform: translateY(-2px);
-}
-
-/* 按钮动画 */
-button, .vp-button {
-  transition: var(--win11-transition);
-}
-
-button:hover, .vp-button:hover {
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* 列表项动画 */
-li {
-  transition: var(--win11-transition);
-}
-
-li:hover {
-  transform: translateX(5px);
-}
-
-/* 卡片动画 */
-.vp-card {
-  transition: var(--win11-transition);
-}
-
-.vp-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-/* 导航菜单动画 */
-.VPNavBarMenuLink {
-  transition: var(--win11-transition);
-}
-
-.VPNavBarMenuLink:hover {
-  transform: translateY(-2px);
-}
-
-/* 侧边栏动画 */
-.VPSidebarItem {
-  transition: var(--win11-transition);
-}
-
-.VPSidebarItem:hover {
-  transform: translateX(5px);
-}
-
-/* 代码块动画 */
-pre {
-  transition: var(--win11-transition);
-}
-
-pre:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* 图片动画 */
-img {
-  transition: var(--win11-transition);
-}
-
-img:hover {
-  transform: scale(1.05);
-}
-
-/* 表格动画 */
-table {
-  transition: var(--win11-transition);
-}
-
-table:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* 导航栏毛玻璃效果 */
-.VPNav {
-  backdrop-filter: blur(10px);
-  background-color: rgba(var(--win-color-background-rgb), 0.8) !important;
-  transition: var(--win11-transition);
-}
-
-/* 平滑滚动 */
 html {
   scroll-behavior: smooth;
 }
 
-/* 页面切换动画 */
-.fade-slide-y-enter-active,
-.fade-slide-y-leave-active {
-  transition: var(--win11-transition);
+/* Content Area Animations */
+.VPContent {
+  animation: blurIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.fade-slide-y-enter-from,
-.fade-slide-y-leave-to {
-  opacity: 0;
-  transform: translateY(30px);
+.VPContent > div {
+  animation: fadeInScale 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 主题切换按钮动画 */
-.VPSwitch {
-  transition: var(--win11-transition);
+/* Markdown File Transition */
+.VPDoc .content {
+  animation: mdTransition 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.VPSwitch:hover {
-  transform: scale(1.1);
+/* Sidebar Animation */
+.VPSidebar {
+  animation: slideInFromRight 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 社交链接动画 */
-.social-link {
-  transition: var(--win11-transition);
+/* Footer Animation */
+.VPFooter {
+  animation: fadeInScale 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
 
-.social-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* Enhanced Link Styles */
+a {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
 }
 
-.social-icon {
-  transition: var(--win11-transition);
+a:hover {
+  color: var(--vp-c-brand);
+  transform: translateY(-1px);
 }
 
-.social-link:hover .social-icon {
-  transform: scale(1.1);
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  background-color: var(--vp-c-brand);
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 滚动条动画 */
-::-webkit-scrollbar-thumb {
-  transition: var(--win11-transition);
+a:hover::after {
+  transform: scaleX(1);
 }
 
-/* 搜索框动画 */
+/* Enhanced Button Animations */
+.VPButton {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.VPButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.VPButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: all 0.5s;
+}
+
+.VPButton:hover::before {
+  left: 100%;
+}
+
+/* Enhanced Card Effects */
+.VPTeamMembersItem, .VPSponsorsItem, .VPDocAsideSponsors {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.VPTeamMembersItem:hover, .VPSponsorsItem:hover, .VPDocAsideSponsors:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero Section Animation */
+.VPHero {
+  animation: floatingAnimation 5s ease-in-out infinite;
+}
+
+/* Enhanced Search Box Animation */
 .VPNavBarSearch {
-  transition: var(--win11-transition);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .VPNavBarSearch:focus-within {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(var(--vp-c-brand-rgb), 0.15);
 }
 
-/* 首页特性部分动画 */
-.VPFeature {
-  transition: var(--win11-transition);
+/* Social Links Styles */
+.social-links-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
-.VPFeature:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+.social-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--vp-c-bg-soft);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--vp-c-divider);
+  text-decoration: none;
+  color: inherit;
 }
 
-/* 文档内容动画 */
-.vp-doc p, .vp-doc ul, .vp-doc ol {
-  animation: win11-fade-in 0.6s var(--win11-transition);
-}
-
-/* 自定义块动画 */
-.custom-block {
-  transition: var(--win11-transition);
-}
-
-.custom-block:hover {
+.social-link:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* 页脚动画 */
-.VPFooter {
-  transition: var(--win11-transition);
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 返回顶部按钮动画 */
-.VPBackToTop {
-  transition: var(--win11-transition);
+.social-link:hover .social-icon {
+  transform: scale(1.05) rotate(5deg);
 }
 
-.VPBackToTop:hover {
-  transform: translateY(-5px);
+.social-content {
+  flex: 1;
 }
 
-/* 目录动画 */
-.VPDocAside .content {
-  transition: var(--win11-transition);
+.social-platform {
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
 }
 
-.VPDocAside .content:hover {
-  transform: translateX(-5px);
+.social-handle {
+  font-size: 0.9em;
+  color: var(--vp-c-text-2);
 }
 
-/* 标签动画 */
-.VPBadge {
-  transition: var(--win11-transition);
+.social-link:hover .social-platform {
+  color: var(--vp-c-brand);
 }
 
-.VPBadge:hover {
-  transform: scale(1.1);
+/* Japanese Font Settings */
+[lang="ja"],
+:lang(ja) {
+  font-family: 
+    'Segoe UI', 'HiraKakuStd-W8-AlphaNum', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo UI', 'Yu Gothic', 
+    'MS PGothic', 'MS Gothic', 'Malgun Gothic', 'Apple SD Gothic Neo', 
+    'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
 
-/* 下拉菜单动画 */
-.VPMenu {
-  transition: var(--win11-transition);
-}
-
-.VPMenu:hover {
-  transform: translateY(-2px);
-}
-
-/* 分页按钮动画 */
-.VPPagination {
-  transition: var(--win11-transition);
-}
-
-.VPPagination:hover {
-  transform: scale(1.05);
-}
-
-/* 代码组动画 */
-.vp-code-group {
-  transition: var(--win11-transition);
-}
-
-.vp-code-group:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* 内联代码动画 */
-code {
-  transition: var(--win11-transition);
-}
-
-code:hover {
-  transform: scale(1.05);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* 引用块动画 */
-blockquote {
-  transition: var(--win11-transition);
-}
-
-blockquote:hover {
-  transform: translateX(5px);
-}
-
-/* 水平线动画 */
-hr {
-  transition: var(--win11-transition);
-}
-
-hr:hover {
-  transform: scaleX(1.05);
-}
-
-/* 输入框动画 */
-input, textarea {
-  transition: var(--win11-transition);
-}
-
-input:focus, textarea:focus {
-  transform: scale(1.02);
-}
-
-/* 选择框动画 */
-select {
-  transition: var(--win11-transition);
-}
-
-select:focus {
-  transform: scale(1.02);
-}
-
-/* 复选框和单选按钮动画 */
-input[type="checkbox"], input[type="radio"] {
-  transition: var(--win11-transition);
-}
-
-input[type="checkbox"]:checked, input[type="radio"]:checked {
-  transform: scale(1.1);
-}
-
-/* 提示框动画 */
-.VPTooltip {
-  transition: var(--win11-transition);
-}
-
-.VPTooltip:hover {
-  transform: translateY(-2px);
-}
-
-/* 标签页动画 */
-.VPTab {
-  transition: var(--win11-transition);
-}
-
-.VPTab:hover {
-  transform: translateY(-2px);
-}
-
-/* 折叠面板动画 */
-.VPCollapsible {
-  transition: var(--win11-transition);
-}
-
-.VPCollapsible:hover {
-  transform: translateY(-2px);
-}
-
-/* 警告框动画 */
-.warning {
-  transition: var(--win11-transition);
-}
-
-.warning:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* 提示框动画 */
-.tip {
-  transition: var(--win11-transition);
-}
-
-.tip:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* 危险框动画 */
-.danger {
-  transition: var(--win11-transition);
-}
-
-.danger:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* 详情框动画 */
-details {
-  transition: var(--win11-transition);
-}
-
-details:hover {
-  transform: translateY(-2px);
-}
-
-/* 标记文本动画 */
-mark {
-  transition: var(--win11-transition);
-}
-
-mark:hover {
-  transform: scale(1.05);
-}
-
-/* 键盘输入动画 */
-kbd {
-  transition: var(--win11-transition);
-}
-
-kbd:hover {
-  transform: translateY(-2px);
-}
-
-/* 上标和下标动画 */
-sup, sub {
-  transition: var(--win11-transition);
-}
-
-sup:hover, sub:hover {
-  transform: scale(1.1);
-}
-
-/* 定义列表动画 */
-dt, dd {
-  transition: var(--win11-transition);
-}
-
-dt:hover, dd:hover {
-  transform: translateX(5px);
-}
-
-/* 图片说明动画 */
-figcaption {
-  transition: var(--win11-transition);
-}
-
-figcaption:hover {
-  transform: translateY(-2px);
-}
-
-/* 进度条动画 */
-progress {
-  transition: var(--win11-transition);
-}
-
-progress:hover {
-  transform: scaleY(1.1);
-}
-
-/* 表单字段集动画 */
-fieldset {
-  transition: var(--win11-transition);
-}
-
-fieldset:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* 标签动画 */
-label {
-  transition: var(--win11-transition);
-}
-
-label:hover {
-  transform: translateX(2px);
-}
-
-/* 按钮组动画 */
-.VPButtonGroup {
-  transition: var(--win11-transition);
-}
-
-.VPButtonGroup:hover {
-  transform: translateY(-2px);
-}
-
-/* 图标动画 */
-.icon {
-  transition: var(--win11-transition);
-}
-
-.icon:hover {
-  transform: scale(1.1);
-}
-
-/* 徽章动画 */
-.VPBadge {
-  transition: var(--win11-transition);
-}
-
-.VPBadge:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-/* 页面过渡动画 */
-.page-enter-active,
-.page-leave-active {
-  transition: opacity 0.5s, transform 0.5s;
-}
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-/* 全局悬停效果 */
-* {
-  transition: var(--win11-transition);
-}
-
-*:hover {
-  transition: var(--win11-transition);
-}
-
-/* 滚动条样式 */
+/* Enhanced Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--win-color-background);
+  background: var(--vp-c-bg-soft);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--win-color-accent);
-  border-radius: 5px;
+  background: var(--vp-c-brand);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--win-color-accent-light);
+  background: var(--vp-c-brand-dark);
+}
+
+/* Custom Fonts */
+@font-face {
+  font-family: 'HiraKakuStd-W8-AlphaNum';
+  src: url('../../HiraginoKakuGothicStd-W8.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'HiraGinoGB';
+  src: url('../../public/HiraginoSansGB-W6.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TeyvatFont';
+  src: url('../../public/TeyvatBlack-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Teyvat Language Font Setting */
+[lang="Teyvat"],
+:lang(Teyvat) {
+  font-family: 'TeyvatFont', sans-serif;
+}
+
+/* Enhanced List Item Animations */
+.VPSidebarItem {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.VPSidebarItem:hover {
+  transform: translateX(3px);
+}
+
+/* Table Enhancements */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+table:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+th, td {
+  border: 1px solid var(--vp-c-divider);
+  padding: 12px;
+  transition: background-color 0.3s ease;
+}
+
+tr:hover {
+  background-color: var(--vp-c-bg-soft);
+}
+
+/* Code Block Enhancements */
+pre {
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+pre:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Enhancements */
+img {
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Menu Item Animations */
+.VPNavBarMenuLink {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.VPNavBarMenuLink:hover {
+  transform: translateY(-1px);
+}
+
+/* Dropdown Menu Animations */
+.VPNavBarMenuGroup .VPNavBarMenuGroupContent {
+  animation: subtlePopIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Page Transition Effect */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Enhanced Focus Styles for Accessibility */
+:focus {
+  outline: 2px solid var(--vp-c-brand);
+  outline-offset: 2px;
+  transition: outline-offset 0.2s ease;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Dark Mode Transition */
+@media (prefers-color-scheme: dark) {
+  body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 }

@@ -29,6 +29,12 @@ export default defineConfig({
           { text: '院群', link: '/join/' },
           { text: '机器人群', link: '/join/robot' },
         ]
+      },
+      {
+        text: '其他',
+        items: [
+          { text: '版权', link: '/other/' },
+        ]
       }
     ],
     sidebar: [
@@ -58,6 +64,13 @@ export default defineConfig({
             items: [
               { text: '院群', link: '/join/' },
               { text: '机器人群', link: '/join/robot' },
+            ]
+          },
+          {
+            text: '其他',
+            collapsed: false,
+            items: [
+              { text: '版权', link: '/other/' },
             ]
           },
           // 其他导航项...

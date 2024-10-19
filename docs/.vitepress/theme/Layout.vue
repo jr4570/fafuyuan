@@ -35,7 +35,7 @@ onMounted(() => {
       <div v-if="showNotification" class="custom-notification">
         <div class="notification-content">
           <span class="notification-title">发癫群附属综合医院</span>
-          <span class="notification-message">网站正在开发中，可能會廢棄</span>
+          <span class="notification-message">网站正在开发中</span>
         </div>
         <button @click="closeNotification" class="close-button">&times;</button>
         <div class="progress-bar-container">

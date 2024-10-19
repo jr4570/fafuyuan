@@ -42,11 +42,11 @@ export default defineConfig({
         text: '导航',
         items: [
           {
-            text: '关于我们',
+            text: '关于本院',
             collapsed: false,
             items: [
-              { text: '团队介绍', link: '/about/' },
-              { text: '成员列表', link: '/about/staff' },
+              { text: '关于本院', link: '/about/' },
+              { text: '本院人员', link: '/about/staff' },
             ]
           },
           {

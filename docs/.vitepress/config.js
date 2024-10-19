@@ -97,7 +97,7 @@ export default defineConfig({
                 footer: {
                   selectText: '选择',
                   navigateText: '切换',
-                  tocloseText: '关闭',
+                  closeText: '关闭',
                 }
               }
             }

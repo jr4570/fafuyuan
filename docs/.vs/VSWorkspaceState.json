@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\join",
+    "\\other",
+    "\\public"
   ],
+  "SelectedNode": "\\other\\index.md",
   "PreviewInSolutionExplorer": false
 }

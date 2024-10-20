@@ -93,7 +93,7 @@ export default defineConfig({
       }
     ],
     footer: {
-      message: '由发癫群附属综合医院-F.F.Y Network 汝可知jr 设计',
+      message: '由发癫群附属综合医院-F.F.Y Network 汝可知jr 设计 | <a href="https://icp.gov.moe/?keyword=20241038" target="_blank">萌ICP备20241038号</a>',
       copyright: 'Copyright © 2024 发癫群附属综合医院-F.F.Y Network'
     },
     search: {

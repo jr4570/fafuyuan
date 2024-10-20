@@ -32,7 +32,7 @@ export default defineConfig({
       {
         text: 'F.F.Y Network',
         items: [
-          { text: '关于F.F.Y Network', link: '/FFYNetwork/' },
+          { text: '关于 F.F.Y Network', link: '/FFYNetwork/' },
           { text: '人员', link: '/FFYNetwork/staff' },
         ]
       },
@@ -76,7 +76,7 @@ export default defineConfig({
             text: 'F.F.Y Network',
             collapsed: false,
             items: [
-              { text: '关于F.F.Y Network', link: '/FFYNetwork/' },
+              { text: '关于 F.F.Y Network', link: '/FFYNetwork/' },
               { text: '人员', link: '/FFYNetwork/staff' },
             ]
           },

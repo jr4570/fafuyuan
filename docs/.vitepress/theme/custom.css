@@ -280,7 +280,7 @@ a:hover::after {
 /* Custom Fonts */
 @font-face {
   font-family: 'HiraKakuStd-W8-AlphaNum';
-  src: url('../../HiraginoKakuGothicStd-W8.woff2') format('woff2');
+  src: url('/HiraginoKakuGothicStd-W8.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -288,7 +288,7 @@ a:hover::after {
 
 @font-face {
   font-family: 'HiraGinoGB';
-  src: url('../../HiraginoSansGB-W6.woff2') format('woff2');
+  src: url('/HiraginoSansGB-W6.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -296,7 +296,7 @@ a:hover::after {
 
 @font-face {
   font-family: 'TeyvatFont';
-  src: url('../../public/TeyvatBlack-Regular.woff2') format('woff2');
+  src: url('/public/TeyvatBlack-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

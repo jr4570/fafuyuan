@@ -30,6 +30,13 @@ export default defineConfig({
         ]
       },
       {
+        text: 'F.F.Y Network',
+        items: [
+          { text: '关于F.F.Y Network', link: '/FFYNetwork/' },
+          { text: '人员', link: '/FFYNetwork/staff' },
+        ]
+      },
+      {
         text: '其他',
         items: [
           { text: '特别赞助', link: '/other/sponsors' },
@@ -42,7 +49,7 @@ export default defineConfig({
         text: '导航',
         items: [
           {
-            text: '关于本院',
+            text: '关于我们',
             collapsed: false,
             items: [
               { text: '关于本院', link: '/about/' },
@@ -66,6 +73,14 @@ export default defineConfig({
             ]
           },
           {
+            text: 'F.F.Y Network',
+            collapsed: false,
+            items: [
+              { text: '关于F.F.Y Network', link: '/FFYNetwork/' },
+              { text: '人员', link: '/FFYNetwork/staff' },
+            ]
+          },
+          {
             text: '其他',
             collapsed: false,
             items: [
@@ -78,8 +93,8 @@ export default defineConfig({
       }
     ],
     footer: {
-      message: '由发癫群附属综合医院-汝可知jr 设计',
-      copyright: 'Copyright © 2024 发癫群附属综合医院'
+      message: '由发癫群附属综合医院-F.F.Y Network 汝可知jr 设计',
+      copyright: 'Copyright © 2024 发癫群附属综合医院-F.F.Y Network'
     },
     search: {
       provider: 'local',

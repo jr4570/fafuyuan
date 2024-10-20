@@ -41,6 +41,7 @@ export default defineConfig({
         items: [
           { text: '特别赞助', link: '/other/sponsors' },
           { text: '版权', link: '/other/' },
+          { text: '广告', link: '/other/ad' },
         ]
       }
     ],
@@ -86,6 +87,7 @@ export default defineConfig({
             items: [
               { text: '特别赞助', link: '/other/sponsors' },
               { text: '版权', link: '/other/' },
+              { text: '广告', link: '/other/ad' },
             ]
           },
           // 其他导航项...

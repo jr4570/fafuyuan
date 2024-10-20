@@ -1,4 +1,4 @@
-# 加入院群
+# 院群
 
 本院QQ群:[984281430](https://qm.qq.com/q/Fnsk6aL48q)
 

@@ -34,7 +34,7 @@ onMounted(() => {
     <template #layout-top>
       <div v-if="showNotification" class="custom-notification">
         <div class="notification-content">
-          <span class="notification-title">发癫群附属综合医院</span>
+          <span class="notification-title">F.F.Y Network</span>
           <span class="notification-message">网站正在开发中</span>
         </div>
         <button @click="closeNotification" class="close-button">&times;</button>

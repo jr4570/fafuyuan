@@ -17,5 +17,5 @@ const 人员 = [
     avatar: '/23.jpg',
     name: 'K·A·Z·U·H·A',
   },
-
 ]
+</script>

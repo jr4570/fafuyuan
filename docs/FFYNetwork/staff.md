@@ -20,4 +20,4 @@ const 人员 = [
 ]
 </script>
 
-<VPTeamMembers size="small" :members="members" />
+<VPTeamMembers size="small" :members="人员" />

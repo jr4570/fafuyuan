@@ -75,6 +75,11 @@ const 宣发科主任及副主任 = [
     name: '爱发电的小电鳗 Man',
     title: '副主任',
   },
+  {
+    avatar: '/27.jpg',
+    name: 'ᯤ㍿',
+    title: '成员',
+  },
 ]
 
 // 保卫科人员
@@ -110,6 +115,24 @@ const 院发言人 = [
     avatar: '/20.jpg',
     name: 'HJURTYwww',
     title: '发言人',
+  },
+]
+
+// 科研部
+const 科研部 = [
+  {
+    avatar: '/28.jpg',
+    name: 'The昊子',
+    title: '署长',
+  },
+]
+
+// 审计科
+const 审计科 = [
+  {
+    avatar: '/29.jpg',
+    name: '在不在不在',
+    title: '主任',
   },
 ]
 
@@ -163,6 +186,12 @@ const 入院服务 = [
 
 ## 院发言人
 <VPTeamMembers size="small" :members="院发言人" />
+
+## 科研部
+<VPTeamMembers size="small" :members="科研部" />
+
+## 审计科
+<VPTeamMembers size="small" :members="审计科" />
 
 ## 信息科主任及副主任
 <VPTeamMembers size="small" :members="信息科主任及副主任" />

@@ -98,6 +98,9 @@ export default defineConfig({
       message: '由发癫群附属综合医院-F.F.Y Network 汝可知jr 设计 | <a href="https://icp.gov.moe/?keyword=20241038" target="_blank">萌ICP备20241038号</a>',
       copyright: 'Copyright © 2024 发癫群附属综合医院-F.F.Y Network'
     },
+    globalNotice: {
+      text: '如您在中华人民共和国境内且无法正常访问本网站（因为中华人民共和国网络审查机制"防火长城"屏蔽或部分省/市/区反诈中心网站拦截等原因或其他原因），请移步 "http://fafuyuan.app"'
+    },
     search: {
       provider: 'local',
       options: {
@@ -140,5 +143,5 @@ export default defineConfig({
     darkModeSwitchLabel: '主题',
     lightModeSwitchTitle: '切换到浅色模式',
     darkModeSwitchTitle: '切换到深色模式'
-  }
+  },
 })

@@ -140,5 +140,9 @@ export default defineConfig({
     darkModeSwitchLabel: '主题',
     lightModeSwitchTitle: '切换到浅色模式',
     darkModeSwitchTitle: '切换到深色模式'
-  }
+  },
+  globalNotice: {
+      text: '如您在中华人民共和国境内且无法正常访问本网站（因为中华人民共和国网络审查机制"防火长城"屏蔽或部分省/市/区反诈中心网站拦截等原因或其他原因），请移步 "http://fafuyuan.app"'
+    },
+  
 })

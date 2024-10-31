@@ -4,7 +4,7 @@
       <div class="notice-container" :class="{ 'dark': isDark, 'mobile': isMobile, 'minimized': !isVisible }">
         <div v-if="isVisible" class="notice-content">
           <div class="notice-header">
-            <img src="/head&favicon.png" alt="Logo" class="notice-logo">
+            <img src="https://act-webstatic.mihoyo.com/puzzle/hk4e/pz_YvJfNJEi5F/resource/puzzle/2024/09/23/94927edf50261e3c1146f0d44db68b3f_8829009084590888673.mp4?x-oss-process=video/snapshot,t_1,f_jpg,m_fast" alt="Logo" class="notice-logo">
             <span class="notice-title">F.F.Y Network</span>
             <button @click="toggleNotice" class="toggle-button" :class="{ 'mobile': isMobile }">
               <svg v-if="isVisible" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="toggle-icon"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
